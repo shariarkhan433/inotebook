@@ -1,6 +1,6 @@
-import { toBeRequired } from '@testing-library/jest-dom/matchers';
-import { type } from '@testing-library/user-event/dist/type';
-import mongoose from 'mongoose';
+// import { toBeRequired } from '@testing-library/jest-dom/matchers';
+// import { type } from '@testing-library/user-event/dist/type';
+const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const UserblogSchema = new Schema({
@@ -24,5 +24,6 @@ const UserblogSchema = new Schema({
 
   }
 );
+const User = mongoose.model('user',UserblogSchema)
 
-module.exports = mongoose.model("user", UserblogSchema)
+module.exports = User
